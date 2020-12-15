@@ -262,3 +262,8 @@ map <F3> :NERDTreeToggle<CR>
 "====================================
 nnoremap <silent>       go    :SkylightJumpTo<CR>
 nnoremap <silent>       gv    :SkylightPreview<CR>
+
+"====================================
+"	 fzf	
+"====================================
+nnoremap <c-p> :Files<CR>
