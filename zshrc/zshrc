@@ -33,5 +33,5 @@ eval "$(rbenv init -)"
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
 # use ag for fzf, reference from https://stackoverflow.com/questions/49052469/how-to-enable-ag-in-vim-fzf
-export FZF_DEFAULT_COMMAND='ag --type f'
+export FZF_DEFAULT_COMMAND='ag -l'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
