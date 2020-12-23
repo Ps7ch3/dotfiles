@@ -3,6 +3,9 @@
 "====================================
 set number
 
+" remap Esc to jj, from https://stackoverflow.com/questions/13178874/how-do-i-switch-between-command-and-insert-mode-in-vim
+inoremap jj <Esc> 
+
 " encoding hack, from https://www.zhihu.com/question/22363620
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 set enc=utf8
