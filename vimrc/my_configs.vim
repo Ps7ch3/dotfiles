@@ -3,6 +3,17 @@
 "====================================
 set number
 
+"---
+" highlight cursor line and column
+"---
+hi CursorLine   cterm=NONE ctermbg=8 " ctermfg=white
+hi CursorColumn cterm=NONE ctermbg=8 " ctermfg=white
+set cursorline
+set cursorcolumn
+
+noremap  <F4> :set cursorline! cursorcolumn!<CR>
+inoremap <F4> <ESC>:set cursorline! cursorcolumn!<CR>i
+
 " remap Esc to jj, from https://stackoverflow.com/questions/13178874/how-do-i-switch-between-command-and-insert-mode-in-vim
 inoremap jj <Esc> 
 
@@ -38,6 +49,7 @@ Plug 'fatih/vim-go'
 Plug 'tpope/vim-surround'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'voldikss/vim-skylight'
+Plug 'romainl/vim-cool'
 " theme
 Plug 'morhetz/gruvbox'
 Plug 'tomasr/molokai'
@@ -47,8 +59,8 @@ call plug#end()
 " theme
 "====================================
 " colorscheme dracula
-colorscheme molokai
-" colorscheme gruvbox
+" colorscheme molokai
+colorscheme gruvbox
 
 filetype plugin indent on    " required
 
@@ -104,10 +116,10 @@ else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
-" Make <CR> auto-select the first completion item and notify coc.nvim to
-" format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+" change <Tab> to confirm selection
+inoremap <silent><expr> <C-m> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
@@ -270,3 +282,14 @@ nnoremap <silent>       gv    :SkylightPreview<CR>
 "	 fzf	
 "====================================
 nnoremap <c-p> :Files<CR>
+
+"====================================
+"	 vim-cool	
+"====================================
+let g:CoolTotalMatches = 1
+
+"====================================
+"	 autopep8	
+"====================================
+" E501: line is too long
+let g:autopep8_ignore="E501"
