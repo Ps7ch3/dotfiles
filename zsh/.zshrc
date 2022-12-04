@@ -23,13 +23,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Plugins
 plugins=(git z tmux)
 
-# source onmyzsh
 source $ZSH/oh-my-zsh.sh
 
 # === User configuration ===
 alias nv="nvim"
 alias git-cz="git-cz --disable-emoji"
-
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -46,5 +44,11 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# === nvm ===
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # === Others ===
 export PATH="$PATH:$HOME/.ft"
+
