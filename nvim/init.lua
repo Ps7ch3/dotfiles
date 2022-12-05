@@ -8,6 +8,7 @@ require('plugin-configs/telescope')
 require('plugin-configs/indent_blankline')
 require('plugin-configs/toggleterm')
 require('plugin-configs/Comment')
+require('plugin-configs/gitsigns')
 
 -- load plugins
 require('plugins')
@@ -18,4 +19,3 @@ require('todo-comments').setup()
 require('lsp/nvim-cmp')
 require('lsp/sumneko_lua')
 require('lspconfig')['pyright'].setup({})
-
