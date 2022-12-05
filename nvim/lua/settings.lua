@@ -2,6 +2,11 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- undodir
+local undodir = vim.fn.stdpath('data') .. '/undodir'
+vim.fn.mkdir(undodir, 'p')
+vim.o.undodir = undodir 
+
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 
@@ -11,6 +16,7 @@ vim.opt.encoding="utf-8"
 vim.cmd "syntax on"
 vim.cmd "set number"
 vim.cmd "colorscheme codedark"
+vim.cmd "set undofile"
 
 -- global option
 vim.o.tabstop = 4
