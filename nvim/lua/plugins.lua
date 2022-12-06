@@ -33,7 +33,10 @@ return require('packer').startup(function(use)
   use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
   use 'windwp/nvim-autopairs'
 
-  use 'tomasiser/vim-code-dark'
+  use {
+      "ellisonleao/gruvbox.nvim",
+      requires = {"rktjmp/lush.nvim"}
+  }
 
   use {'nvim-telescope/telescope.nvim', tag = '0.1.0', requires = { {'nvim-lua/plenary.nvim'} }}
   use "lukas-reineke/indent-blankline.nvim"

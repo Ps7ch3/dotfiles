@@ -9,13 +9,13 @@ vim.o.undodir = undodir
 
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
-
 vim.opt.encoding="utf-8"
+vim.o.background = "dark"
 
 -- cmd
 vim.cmd "syntax on"
 vim.cmd "set number"
-vim.cmd "colorscheme codedark"
+vim.cmd "colorscheme gruvbox"
 vim.cmd "set undofile"
 
 -- global option
