@@ -9,10 +9,10 @@ require('plugin-configs/indent_blankline')
 require('plugin-configs/toggleterm')
 require('plugin-configs/Comment')
 require('plugin-configs/gitsigns')
+require('plugin-configs/nvim-tree')
 
 -- load plugins
 require('plugins')
-require('nvim-tree').setup()
 require('feline').setup()
 require('todo-comments').setup()
 
