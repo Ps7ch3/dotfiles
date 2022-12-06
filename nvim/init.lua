@@ -17,5 +17,4 @@ require('feline').setup()
 require('todo-comments').setup()
 
 require('lsp/nvim-cmp')
-require('lsp/sumneko_lua')
 require('lspconfig')['pyright'].setup({})

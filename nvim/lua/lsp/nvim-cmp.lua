@@ -3,6 +3,7 @@
 
 -- Setup nvim-cmp.
 local cmp = require'cmp'
+require('luasnip.loaders.from_vscode').lazy_load()
 
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -31,7 +32,7 @@ cmp.setup({
   },
   snippet = {
     expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+      luasnip.lsp_expand(args.body) -- luasnip
     end,
   },
   mapping = cmp.mapping.preset.insert(TableConcat({
