@@ -1,6 +1,6 @@
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "lua", "python", "bash" },
+  ensure_installed = { "lua", "python", "bash", "help" },
   ignore_installed = { "sql" },
 
   -- Automatically install missing parsers when entering buffer
