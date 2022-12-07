@@ -27,7 +27,7 @@ source $ZSH/oh-my-zsh.sh
 
 # === User configuration ===
 alias nv="nvim"
-alias git-cz="git-cz --disable-emoji"
+alias cz="git cz"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
