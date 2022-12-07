@@ -25,3 +25,5 @@ prequire('todo-comments').setup()
 prequire('lsp/nvim-cmp')
 prequire('lspconfig')['pyright'].setup({})
 
+prequire('lsp/sumneko_lua')
+
