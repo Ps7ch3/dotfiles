@@ -5,22 +5,23 @@ local function prequire(m)
 end
 
 -- load settings
-require('settings')
-require('keybindings')
+prequire('settings')
+prequire('keybindings')
 
-require('plugin-configs/bufferline')
-require('plugin-configs/nvim-autopairs')
-require('plugin-configs/telescope')
-require('plugin-configs/toggleterm')
-require('plugin-configs/Comment')
-require('plugin-configs/gitsigns')
-require('plugin-configs/nvim-tree')
-require('plugin-configs/nvim-treesitter')
+prequire('plugin-configs/bufferline')
+prequire('plugin-configs/nvim-autopairs')
+prequire('plugin-configs/telescope')
+prequire('plugin-configs/toggleterm')
+prequire('plugin-configs/Comment')
+prequire('plugin-configs/gitsigns')
+prequire('plugin-configs/nvim-tree')
+prequire('plugin-configs/nvim-treesitter')
 
 -- load plugins
-require('plugins')
-require('feline').setup()
-require('todo-comments').setup()
+prequire('plugins')
+prequire('feline').setup()
+prequire('todo-comments').setup()
 
-require('lsp/nvim-cmp')
-require('lspconfig')['pyright'].setup({})
+prequire('lsp/nvim-cmp')
+prequire('lspconfig')['pyright'].setup({})
+
