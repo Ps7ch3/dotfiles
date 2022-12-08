@@ -1,29 +1,36 @@
-local _map = vim.api.nvim_set_keymap
+-- km for keymap
+local km = vim.api.nvim_set_keymap
 
 vim.g.mapleader = " "
 
-local pluginKeymap = {}
-local opt = {
+local opts = {
     noremap = true,
     silent = true
 }
 
 -- move among windows
-_map('n', '<C-j>', '<C-w>j', opt)
-_map('n', '<C-k>', '<C-w>k', opt)
-_map('n', '<C-h>', '<C-w>h', opt)
-_map('n', '<C-l>', '<C-w>l', opt)
-
--- bufferline
-_map("n", "[b", ":BufferLineCyclePrev<CR>", opt)
-_map("n", "[n", ":BufferLineCycleNext<CR>", opt)
+km('n', '<C-j>', '<C-w>j', opts)
+km('n', '<C-k>', '<C-w>k', opts)
+km('n', '<C-h>', '<C-w>h', opts)
+km('n', '<C-l>', '<C-w>l', opts)
 
 
 -- buffer
-_map('n', '<leader>bd', ':bd', {})
+km('n', '<leader>bd', ':bd', {})
+
+-- Navigate buffers
+km("n", "<S-l>", ":bnext<CR>", opts)
+km("n", "<S-h>", ":bprevious<CR>", opts)
+
+-- ** plugins **
+-- bufferline
+km("n", "[b", ":BufferLineCyclePrev<CR>", opts)
+km("n", "[n", ":BufferLineCycleNext<CR>", opts)
 
 -- nvim-tree
-_map("n", "<leader>t", ":NvimTreeToggle<CR>", opt)
+km("n", "<leader>t", ":NvimTreeToggle<CR>", opts)
 
-return pluginKeymap
+-- Telescope
+km("n", "<leader>gst", ":Telescope git_status<CR>", opts)
+km("n", "<leader>gss", ":Telescope git_stash<CR>", opts)
 
