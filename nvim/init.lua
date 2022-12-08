@@ -16,6 +16,7 @@ require('plugin-configs.nvim-treesitter')
 require('plugin-configs.lualine')
 require('plugin-configs.alpha')
 require('plugin-configs.project')
+require('plugin-configs.impatient')
 
 -- cmp & snippet
 require('nvim-cmp')

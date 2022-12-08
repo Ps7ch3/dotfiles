@@ -97,4 +97,7 @@ return packer.startup(function(use)
         requires = {"rktjmp/lush.nvim"}
     }
 
+    -- other
+    use {'lewis6991/impatient.nvim'} -- profiler
+
 end)
