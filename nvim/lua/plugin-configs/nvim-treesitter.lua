@@ -11,7 +11,9 @@ configs.setup {
   -- Automatically install missing parsers when entering buffer
   -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
   auto_install = false,
-
+  autoparis = {
+    enable = true,
+  },
   highlight = {
     -- `false` will disable the whole extension
     enable = true,
@@ -30,5 +32,13 @@ configs.setup {
       node_incremental = '<TAB>',
       node_decremental = '<S-TAB>',
     },
+  },
+  indent = {
+      enable = true,
+      disable = { "yaml", "yml" }
+  },
+  context_commentstring = {
+    enable = true,
+    enable_autocmd = false,
   },
 }

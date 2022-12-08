@@ -5,6 +5,7 @@ require('colorscheme')
 
 -- load plugins
 require('plugin-configs.bufferline')
+require('plugin-configs.indentline')
 require('plugin-configs.nvim-autopairs')
 require('plugin-configs.telescope')
 require('plugin-configs.toggleterm')
