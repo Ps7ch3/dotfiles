@@ -79,7 +79,10 @@ return packer.startup(function(use)
   use({"L3MON4D3/LuaSnip"})
 
   -- beautifier nvim
-  use 'feline-nvim/feline.nvim'
+  use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
 
   -- color
   use {

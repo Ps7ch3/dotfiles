@@ -12,9 +12,7 @@ require('plugin-configs/Comment')
 require('plugin-configs/gitsigns')
 require('plugin-configs/nvim-tree')
 require('plugin-configs/nvim-treesitter')
-
--- load other plugins
-require('feline').setup()
+require('plugin-configs/lualine')
 
 -- cmp & snippet
 require('nvim-cmp')
