@@ -15,7 +15,6 @@ vim.o.background = "dark"
 -- cmd
 vim.cmd "syntax on"
 vim.cmd "set number"
-vim.cmd "colorscheme gruvbox"
 vim.cmd "set undofile"
 
 -- global option

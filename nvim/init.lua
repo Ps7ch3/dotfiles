@@ -1,6 +1,7 @@
 -- load core settings
 require('settings')
 require('keybindings')
+require('colorscheme')
 
 -- load plugins
 require('plugin-configs/bufferline')
