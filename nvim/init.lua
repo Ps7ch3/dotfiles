@@ -16,5 +16,8 @@ require('plugins')
 require('feline').setup()
 require('todo-comments').setup()
 
+require('lsp/mason')
+require('lsp/lua-lsp')
 require('lsp/nvim-cmp')
 require('lspconfig')['pyright'].setup({})
+

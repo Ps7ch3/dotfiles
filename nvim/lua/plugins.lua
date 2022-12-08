@@ -27,7 +27,13 @@ return require('packer').startup(function(use)
       end,
   }
 
-  use 'neovim/nvim-lspconfig'
+  -- lsp related --
+  use {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+      "neovim/nvim-lspconfig"
+  }
+
   use 'feline-nvim/feline.nvim'
 
   use 'hrsh7th/cmp-nvim-lsp'
