@@ -14,6 +14,8 @@ require('plugin-configs.gitsigns')
 require('plugin-configs.nvim-tree')
 require('plugin-configs.nvim-treesitter')
 require('plugin-configs.lualine')
+require('plugin-configs.alpha')
+require('plugin-configs.project')
 
 -- cmp & snippet
 require('nvim-cmp')
