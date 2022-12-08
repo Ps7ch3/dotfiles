@@ -1,7 +1,8 @@
--- load settings
+-- load core settings
 require('settings')
 require('keybindings')
 
+-- load plugins
 require('plugin-configs/bufferline')
 require('plugin-configs/nvim-autopairs')
 require('plugin-configs/telescope')
@@ -11,13 +12,15 @@ require('plugin-configs/gitsigns')
 require('plugin-configs/nvim-tree')
 require('plugin-configs/nvim-treesitter')
 
+-- load other plugins
+require('feline').setup()
+
+-- cmp & snippet
+require('nvim-cmp')
+
 -- load plugins
 require('plugins')
-require('feline').setup()
-require('todo-comments').setup()
 
-require('lsp/mason')
-require('lsp/lua-lsp')
-require('lsp/nvim-cmp')
-require('lspconfig')['pyright'].setup({})
+-- lsp
+require('lsp')
 

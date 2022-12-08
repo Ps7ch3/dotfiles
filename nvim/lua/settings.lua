@@ -5,7 +5,7 @@ vim.g.loaded_netrwPlugin = 1
 -- undodir
 local undodir = vim.fn.stdpath('data') .. '/undodir'
 vim.fn.mkdir(undodir, 'p')
-vim.o.undodir = undodir 
+vim.o.undodir = undodir
 
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true

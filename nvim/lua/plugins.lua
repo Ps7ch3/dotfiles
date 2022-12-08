@@ -58,8 +58,6 @@ return require('packer').startup(function(use)
 
   use { 'numToStr/Comment.nvim' }
 
-  use {"folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim"}
-
   use { 'lewis6991/gitsigns.nvim' }
 
 end)
