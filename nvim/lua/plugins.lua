@@ -33,10 +33,7 @@ return packer.startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
-  -- Post-install/update hook with call of vimscript function with argument
-  use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }
-
-  -- custom
+  -- tools 
   use {
       'nvim-tree/nvim-tree.lua',
       requires = {
@@ -45,13 +42,15 @@ return packer.startup(function(use)
       tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
 
-  use {
-      'nvim-treesitter/nvim-treesitter',
-      run = function()
-          local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-          ts_update()
-      end,
-  }
+  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+  use {'nvim-telescope/telescope.nvim', tag = '0.1.0', requires = { {'nvim-lua/plenary.nvim'} }}
+  use {"akinsho/toggleterm.nvim", tag = '*'}
+
+  -- code
+  use 'windwp/nvim-autopairs'
+  use { 'numToStr/Comment.nvim' }
+  use { 'lewis6991/gitsigns.nvim' }
+  use { "lukas-reineke/indent-blankline.nvim" }
 
   -- lsp related --
   use {
@@ -60,30 +59,32 @@ return packer.startup(function(use)
       "neovim/nvim-lspconfig"
   }
 
-  use 'feline-nvim/feline.nvim'
-
+  -- cmp related
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
 
-  use({"L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*"})
+  -- ts
+  use {
+      'nvim-treesitter/nvim-treesitter',
+      run = function()
+          local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+          ts_update()
+      end,
+  }
 
-  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
-  use 'windwp/nvim-autopairs'
+  -- snippet
+  use({"L3MON4D3/LuaSnip"})
 
+  -- beautifier nvim
+  use 'feline-nvim/feline.nvim'
+
+  -- color
   use {
       "ellisonleao/gruvbox.nvim",
       requires = {"rktjmp/lush.nvim"}
   }
-
-  use {'nvim-telescope/telescope.nvim', tag = '0.1.0', requires = { {'nvim-lua/plenary.nvim'} }}
-  use "lukas-reineke/indent-blankline.nvim"
-  use {"akinsho/toggleterm.nvim", tag = '*'}
-
-  use { 'numToStr/Comment.nvim' }
-
-  use { 'lewis6991/gitsigns.nvim' }
 
 end)
