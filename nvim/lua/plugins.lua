@@ -58,6 +58,7 @@ return packer.startup(function(use)
       "williamboman/mason-lspconfig.nvim",
       "neovim/nvim-lspconfig"
   }
+  use {"jose-elias-alvarez/null-ls.nvim"}
 
   -- cmp related
   use 'hrsh7th/cmp-nvim-lsp'
