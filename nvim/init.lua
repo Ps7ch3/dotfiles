@@ -21,8 +21,8 @@ require('plugin-configs.trouble')
 
 
 -- cmp & snippet
-require('nvim-cmp')
 require('plugin-configs.luasnip')
+require('nvim-cmp')
 
 -- load plugins
 require('plugins')

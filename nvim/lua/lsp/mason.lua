@@ -1,6 +1,6 @@
 local servers = {
     "sumneko_lua",
-    "pyright"
+    "pyright",
 }
 
 local status_mason_ok, mason = pcall(require, "mason")
