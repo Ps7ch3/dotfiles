@@ -34,3 +34,5 @@ km("n", "<leader>t", ":NvimTreeToggle<CR>", opts)
 km("n", "<leader>gst", ":Telescope git_status<CR>", opts)
 km("n", "<leader>gss", ":Telescope git_stash<CR>", opts)
 
+-- neogen
+km("n", "<leader>doc", ":Neogen<CR>", opts)

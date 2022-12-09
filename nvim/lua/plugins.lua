@@ -32,6 +32,13 @@ end
 return packer.startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
+    
+    -- docs
+    use {
+        "danymat/neogen",
+        requires = "nvim-treesitter/nvim-treesitter",
+        tag = "*"
+    }
 
     -- tools 
     use { "ahmedkhalf/project.nvim" }
@@ -42,10 +49,20 @@ return packer.startup(function(use)
         },
         tag = 'nightly' -- optional, updated every week. (see issue #1193)
     }
+    use({
+        "kylechui/nvim-surround",
+        tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+        config = function()
+            require("nvim-surround").setup({
+                -- Configuration here, or leave empty to use defaults
+            })
+        end
+    })
 
-    use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
-    use {'nvim-telescope/telescope.nvim', tag = '0.1.0', requires = { {'nvim-lua/plenary.nvim'} }}
+    use {"akinsho/bufferline.nvim", tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+    use {"nvim-telescope/telescope.nvim", tag = '0.1.0', requires = { {'nvim-lua/plenary.nvim'} }}
     use {"akinsho/toggleterm.nvim", tag = '*'}
+    use {"folke/which-key.nvim"}
 
     -- code
     use 'windwp/nvim-autopairs'
