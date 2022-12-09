@@ -82,7 +82,9 @@ return packer.startup(function(use)
     }
 
     -- snippet
-    use({"L3MON4D3/LuaSnip"})
+    use {"L3MON4D3/LuaSnip"}
+    use {"rafamadriz/friendly-snippets"}
+    use {'saadparwaiz1/cmp_luasnip'}
 
     -- beautifier nvim
     use {
