@@ -19,8 +19,10 @@ require('plugin-configs.project')
 require('plugin-configs.impatient')
 require('plugin-configs.trouble')
 
+
 -- cmp & snippet
 require('nvim-cmp')
+require('plugin-configs.luasnip')
 
 -- load plugins
 require('plugins')

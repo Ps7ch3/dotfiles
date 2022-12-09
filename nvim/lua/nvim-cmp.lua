@@ -11,8 +11,6 @@ if not snip_status_ok then
   return
 end
 
-require('luasnip.loaders.from_vscode').lazy_load()
-
 -- define other bindings and settings in this setup, only the relevant vsnips bindings are shown here
 cmp.setup({
   view = {

@@ -2,6 +2,9 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- use luasnip
+vim.g.snippets = "luasnip"
+
 -- undodir
 local undodir = vim.fn.stdpath('data') .. '/undodir'
 vim.fn.mkdir(undodir, 'p')
