@@ -52,6 +52,10 @@ return packer.startup(function(use)
     use { 'numToStr/Comment.nvim' }
     use { 'lewis6991/gitsigns.nvim' }
     use { "lukas-reineke/indent-blankline.nvim" }
+    use {
+        "folke/trouble.nvim",
+        requires = "kyazdani42/nvim-web-devicons",
+    }
 
     -- lsp related --
     use {

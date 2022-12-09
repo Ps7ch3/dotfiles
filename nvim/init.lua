@@ -17,6 +17,7 @@ require('plugin-configs.lualine')
 require('plugin-configs.alpha')
 require('plugin-configs.project')
 require('plugin-configs.impatient')
+require('plugin-configs.trouble')
 
 -- cmp & snippet
 require('nvim-cmp')
