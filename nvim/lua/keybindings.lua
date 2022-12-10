@@ -16,7 +16,7 @@ km('n', '<C-l>', '<C-w>l', opts)
 
 
 -- buffer
-km('n', '<leader>bd', ':bd', {})
+km('n', '<leader>bd', ':bd<CR>', opts)
 
 -- Navigate buffers
 km("n", "<S-l>", ":bnext<CR>", opts)

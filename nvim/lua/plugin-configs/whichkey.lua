@@ -1,15 +1,15 @@
 local status_ok, whichkey = pcall(require, "which-key")
 if not status_ok then
-	return
+    return
 end
 
-whichkey.setup {
+local setup = {
     plugins = {
         marks = true, -- shows a list of your marks on ' and `
         registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
         spelling = {
-            enabled = false, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
-            suggestions = 20, -- how many suggestions should be shown in the list?
+            enabled = true, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
+            suggestions = 7, -- how many suggestions should be shown in the list?
         },
         -- the presets plugin, adds help for a bunch of default keybindings in Neovim
         -- No actual key bindings are created
@@ -56,7 +56,7 @@ whichkey.setup {
         align = "left", -- align columns left, center or right
     },
     ignore_missing = false, -- enable this to hide mappings for which you didn't specify a label
-    hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ "}, -- hide mapping boilerplate
+    hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
     show_help = true, -- show help message on the command line when the popup is visible
     show_keys = true, -- show the currently pressed key and its label as a message in the command line
     triggers = "auto", -- automatically setup triggers
@@ -76,3 +76,95 @@ whichkey.setup {
     },
 }
 
+-- mapping
+local opts = {
+    mode = "n",
+    prefix = "<leader><leader>",
+    buffer = nil,
+    silent = true,
+    noremap = true,
+    nowait = true,
+}
+
+local mappings = {
+    ["a"] = { "<cmd>Alpha<CR>", "Alpha" },
+    ["w"] = { "<cmd>w!<CR>", "Save" },
+    ["q"] = { "<cmd>q!<CR>", "Quit" },
+    ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+    ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
+    ["s"] = { "<cmd>source %<CR>", "Source current file" },
+
+    -- groups
+    p = {
+        name = "Packer",
+        c = { "<cmd>PackerCompile<cr>", "Compile" },
+        i = { "<cmd>PackerInstall<cr>", "Install" },
+        s = { "<cmd>PackerSync<cr>", "Sync" },
+        S = { "<cmd>PackerStatus<cr>", "Status" },
+        u = { "<cmd>PackerUpdate<cr>", "Update" },
+    },
+
+    g = {
+        name = "Git",
+        j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
+        k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
+        l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
+        p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
+        r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
+        R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
+        s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
+        u = {
+            "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
+            "Undo Stage Hunk",
+        },
+        o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
+        b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+        c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
+        d = {
+            "<cmd>Gitsigns diffthis HEAD<cr>",
+            "Diff",
+        },
+    },
+    t = {
+        name = "Terminal",
+        t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
+        p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
+        f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
+        h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
+        v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+    },
+    l = {
+        name = "LSP",
+        a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+        d = {
+            "<cmd>Telescope diagnostics bufnr=0<cr>",
+            "Document Diagnostics",
+        },
+        w = {
+            "<cmd>Telescope diagnostics<cr>",
+            "Workspace Diagnostics",
+        },
+        f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
+        i = { "<cmd>LspInfo<cr>", "Info" },
+        I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
+        j = {
+            "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
+            "Next Diagnostic",
+        },
+        k = {
+            "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
+            "Prev Diagnostic",
+        },
+        l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
+        q = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
+        r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+        s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
+        S = {
+            "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
+            "Workspace Symbols",
+        },
+    },
+}
+
+whichkey.setup(setup)
+whichkey.register(mappings, opts)
