@@ -45,11 +45,17 @@ ls.setup({
 	end,
 })
 
-local ls = require("luasnip")
+-- keymap
+vim.keymap.set("i", "<c-l>", function()
+    if ls.choice_active() then
+        ls.change_choice(1)
+    end
+end)
+
 -- some shorthands...
-local snip = ls.snippet
-local node = ls.snippet_node
-local text = ls.text_node
+local s = ls.snippet
+local sn = ls.snippet_node
+local t = ls.text_node
 local insert = ls.insert_node
 local func = ls.function_node
 local choice = ls.choice_node
