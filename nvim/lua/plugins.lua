@@ -32,7 +32,7 @@ end
 return packer.startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
-    
+
     -- docs
     use {
         "danymat/neogen",
@@ -115,10 +115,11 @@ return packer.startup(function(use)
     }
 
     -- color
-    use {
-        "ellisonleao/gruvbox.nvim",
-        requires = {"rktjmp/lush.nvim"}
-    }
+    -- use {
+    --     "ellisonleao/gruvbox.nvim",
+    --     requires = {"rktjmp/lush.nvim"}
+    -- }
+    use {'folke/tokyonight.nvim'}
 
     -- other
     use {'lewis6991/impatient.nvim'} -- profiler
