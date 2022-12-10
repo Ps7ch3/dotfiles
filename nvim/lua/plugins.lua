@@ -82,6 +82,14 @@ return packer.startup(function(use)
     }
     use {"jose-elias-alvarez/null-ls.nvim"}
 
+    -- debug
+    use {
+        "mfussenegger/nvim-dap",
+        "rcarriga/nvim-dap-ui",
+        "theHamsta/nvim-dap-virtual-text",
+        "mfussenegger/nvim-dap-python",
+    }
+
     -- cmp related
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'

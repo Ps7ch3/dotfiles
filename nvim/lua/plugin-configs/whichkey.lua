@@ -164,6 +164,14 @@ local mappings = {
             "Workspace Symbols",
         },
     },
+    d = {
+        name = "Debug",
+        c = { "<cmd>lua require'dap'.continue()<CR>", "Continue"},
+        b = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>", "Toggle BP"},
+        i = {"<cmd>lua require'dap'.step_into()<CR>", "Step into"},
+        o = {"<cmd>lua require'dap'.step_out()<CR>", "Step out"},
+        v = {"<cmd>lua require'dap'.step_over()<CR>", "Step over"},
+    }
 }
 
 whichkey.setup(setup)

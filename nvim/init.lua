@@ -29,6 +29,9 @@ require('plugin-configs.nvim-autopairs')
 -- git
 require('plugin-configs.gitsigns')
 
+-- debug
+require('dap.dap')
+
 -- cmp & snippet
 require('plugin-configs.luasnip')
 require('nvim-cmp')
@@ -38,4 +41,3 @@ require('plugins')
 
 -- lsp
 require('lsp')
-
