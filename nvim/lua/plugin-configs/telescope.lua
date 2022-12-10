@@ -13,5 +13,10 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 telescope.setup {
     defaults = {
         path_display = { "smart" }
+    },
+    pickers = {
+        find_files = {
+            hidden = true
+        }
     }
 }
