@@ -1,6 +1,6 @@
 -- load core settings
 require('settings')
-require('keybindings')
+require('keymap')
 require('colorscheme')
 
 -- load plugins
