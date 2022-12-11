@@ -1,6 +1,7 @@
 local servers = {
     "sumneko_lua",
     "pyright",
+    "tsserver",
 }
 
 local status_mason_ok, mason = pcall(require, "mason")
@@ -16,7 +17,7 @@ end
 mason.setup()
 mason_lsp_config.setup({
     ensure_installed = servers,
-    automatic_installation = True
+    automatic_installation = true,
 })
 
 -- config
