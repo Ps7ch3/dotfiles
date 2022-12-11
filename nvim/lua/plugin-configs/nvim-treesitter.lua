@@ -5,7 +5,7 @@ end
 
 configs.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "lua", "python", "bash", "help" },
+  ensure_installed = { "lua", "python", "bash", "help", "vim" },
   ignore_installed = { "sql" },
 
   -- Automatically install missing parsers when entering buffer
