@@ -61,7 +61,8 @@ return packer.startup(function(use)
     use {"gpanders/editorconfig.nvim"}
 
     -- code
-    use 'windwp/nvim-autopairs'
+    use {'RRethy/vim-illuminate'}
+    use {'windwp/nvim-autopairs'}
     use { 'numToStr/Comment.nvim' }
     use { 'lewis6991/gitsigns.nvim' }
     use { "lukas-reineke/indent-blankline.nvim" }
