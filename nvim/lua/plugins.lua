@@ -61,7 +61,13 @@ return packer.startup(function(use)
     use {"gpanders/editorconfig.nvim"}
 
     -- code
+    -- ** highlight
+    use {
+        "folke/todo-comments.nvim",
+        requires = "nvim-lua/plenary.nvim",
+    }
     use {'RRethy/vim-illuminate'}
+
     use {'windwp/nvim-autopairs'}
     use { 'numToStr/Comment.nvim' }
     use { 'lewis6991/gitsigns.nvim' }

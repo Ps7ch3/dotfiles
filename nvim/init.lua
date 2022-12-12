@@ -26,6 +26,7 @@ require('plugin-configs.trouble')
 require('plugin-configs.neogen')
 require('plugin-configs.nvim-autopairs')
 require('plugin-configs.surround')
+require('plugin-configs.todo-comments')
 
 -- git
 require('plugin-configs.gitsigns')
