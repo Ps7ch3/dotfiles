@@ -39,3 +39,14 @@ km("n", "<leader>doc", ":Neogen<CR>", opts)
 
 km("v", "<", "<gv", opts)
 km("v", ">", ">gv", opts)
+
+km("i", "<C-b>", "<Left>", opts)
+km("i", "<C-f>", "<Right>", opts)
+km("i", "<C-a>", "<Home>", opts)
+km("i", "<C-e>", "<End>", opts)
+
+km("c", "<C-b>", "<Left>", opts)
+km("c", "<C-f>", "<Right>", opts)
+km("c", "<C-a>", "<Home>", opts)
+km("c", "<C-e>", "<End>", opts)
+
