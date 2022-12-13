@@ -36,3 +36,6 @@ km("n", "<leader>gss", ":Telescope git_stash<CR>", opts)
 
 -- neogen
 km("n", "<leader>doc", ":Neogen<CR>", opts)
+
+km("v", "<", "<gv", opts)
+km("v", ">", ">gv", opts)
