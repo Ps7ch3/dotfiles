@@ -20,7 +20,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # Theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-
 # === zinit ===
 IS_ZINIT_INSTALL=0
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -32,11 +31,11 @@ then
     echo "Zinit is installed, source your zshrc again."
 else
     IS_ZINIT_INSTALL=1
+    source "${ZINIT_HOME}/zinit.zsh"
 fi
 
 if [ $IS_ZINIT_INSTALL -eq 1 ]
 then
-    source "${ZINIT_HOME}/zinit.zsh"
     zinit ice lucid wait='0' atload='_zsh_autosuggest_start'
     zi light "zsh-users/zsh-autosuggestions"
 
