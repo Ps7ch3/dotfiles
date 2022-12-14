@@ -57,7 +57,7 @@ then
 fi
 
 # === plugin config ===
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5f5f5f"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=059" # https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg
 
 # source ohmyzsh
 source $ZSH/oh-my-zsh.sh
