@@ -12,7 +12,12 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
 telescope.setup {
     defaults = {
-        path_display = { "smart" }
+        path_display = { "smart" },
+        file_ignore_patterns = {
+            ".git/",
+            ".venv/",
+            ".pyvenv/",
+        }
     },
     pickers = {
         find_files = {
