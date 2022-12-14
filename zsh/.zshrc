@@ -68,7 +68,7 @@ source $ZSH/oh-my-zsh.sh
 alias nv="nvim"
 
 # git-cz
-alias cz="git-cz --disable-emoji"  # due to https://github.com/streamich/git-cz/issues/164
+alias cz="git-cz --disable-emoji --scope"  # due to https://github.com/streamich/git-cz/issues/164
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
