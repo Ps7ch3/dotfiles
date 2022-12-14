@@ -20,8 +20,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # Theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# Plugins
-plugins=(git z tmux)
 
 # === zplug ===
 IS_ZPLUG_INSTALL=0
@@ -39,6 +37,13 @@ then
     source ~/.zplug/init.zsh
 
     zplug "zsh-users/zsh-autosuggestions"
+    zplug "junegunn/fzf", as:command
+
+    # ohmyzsh
+    zplug "plugins/git", from:oh-my-zsh
+    zplug "plugins/tmux", from:oh-my-zsh
+    zplug "plugins/z", from:oh-my-zsh
+
     # Install plugins if there are plugins that have not been installed
     if ! zplug check --verbose; then
         printf "Install? [y/N]: "
@@ -54,9 +59,10 @@ fi
 # === plugin config ===
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5f5f5f"
 
-
 # source ohmyzsh
 source $ZSH/oh-my-zsh.sh
+
+[ -f ~/.fzf.zsh ] && source $HOME/.fzf.zsh
 
 # === User configuration ===
 alias nv="nvim"
