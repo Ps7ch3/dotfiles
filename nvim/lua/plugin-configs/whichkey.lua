@@ -171,6 +171,11 @@ local mappings = {
         i = {"<cmd>lua require'dap'.step_into()<CR>", "Step into"},
         o = {"<cmd>lua require'dap'.step_out()<CR>", "Step out"},
         v = {"<cmd>lua require'dap'.step_over()<CR>", "Step over"},
+    },
+    b = {
+        name = "Bufferline",
+        p = { "<cmd>BufferLinePick<CR>", "Pick buffer"},
+        c = { "<cmd>BufferLinePickClose<CR>", "Close buffer pick"},
     }
 }
 
