@@ -26,7 +26,7 @@ IS_ZPLUG_INSTALL=0
 
 if [ ! -d $HOME/.zplug ]
 then
-    curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsb1
+    curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
     echo "You have installed zplug, source your .zshrc again"
 else
     IS_ZPLUG_INSTALL=1
