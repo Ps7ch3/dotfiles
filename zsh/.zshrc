@@ -21,43 +21,35 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 
-# === zplug ===
-IS_ZPLUG_INSTALL=0
+# === zinit ===
+IS_ZINIT_INSTALL=0
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
-if [ ! -d $HOME/.zplug ]
+if [ ! -d $ZINIT_HOME ]
 then
-    curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
-    echo "You have installed zplug, source your .zshrc again"
+    mkdir -p "$(dirname $ZINIT_HOME)"
+    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+    echo "Zinit is installed, source your zshrc again."
 else
-    IS_ZPLUG_INSTALL=1
+    IS_ZINIT_INSTALL=1
 fi
 
-if [ $IS_ZPLUG_INSTALL -eq 1 ]
+if [ $IS_ZINIT_INSTALL -eq 1 ]
 then
-    source ~/.zplug/init.zsh
+    source "${ZINIT_HOME}/zinit.zsh"
+    zinit ice lucid wait='0' atload='_zsh_autosuggest_start'
+    zi light "zsh-users/zsh-autosuggestions"
 
-    zplug "zsh-users/zsh-autosuggestions"
-    zplug "junegunn/fzf", as:command
+    zi ice from"gh-r" as"program"
+    zi light "junegunn/fzf"
 
-    # ohmyzsh
-    zplug "plugins/git", from:oh-my-zsh
-    zplug "plugins/tmux", from:oh-my-zsh
-    zplug "plugins/z", from:oh-my-zsh
-
-    # Install plugins if there are plugins that have not been installed
-    if ! zplug check --verbose; then
-        printf "Install? [y/N]: "
-        if read -q; then
-            echo; zplug install
-        fi
-    fi
-
-    # Then, source plugins and add commands to $PATH
-    zplug load
+    zi snippet OMZP::git
+    zi snippet OMZP::tmux
+    zi snippet OMZP::z
 fi
 
 # === plugin config ===
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=059" # https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5f5f5f" # https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg
 
 # source ohmyzsh
 source $ZSH/oh-my-zsh.sh
