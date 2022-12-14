@@ -23,6 +23,39 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Plugins
 plugins=(git z tmux)
 
+# === zplug ===
+IS_ZPLUG_INSTALL=0
+
+if [ ! -d $HOME/.zplug ]
+then
+    curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsb1
+    echo "You have installed zplug, source your .zshrc again"
+else
+    IS_ZPLUG_INSTALL=1
+fi
+
+if [ $IS_ZPLUG_INSTALL -eq 1 ]
+then
+    source ~/.zplug/init.zsh
+
+    zplug "zsh-users/zsh-autosuggestions"
+    # Install plugins if there are plugins that have not been installed
+    if ! zplug check --verbose; then
+        printf "Install? [y/N]: "
+        if read -q; then
+            echo; zplug install
+        fi
+    fi
+
+    # Then, source plugins and add commands to $PATH
+    zplug load --verbose
+fi
+
+# === plugin config ===
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5f5f5f"
+
+
+# source ohmyzsh
 source $ZSH/oh-my-zsh.sh
 
 # === User configuration ===
@@ -34,17 +67,17 @@ alias czs="git-cz --disable-emoji --scope"  # due to https://github.com/streamic
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-# __conda_setup="$('$HOME/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-# if [ $? -eq 0 ]; then
-#     eval "$__conda_setup"
-# else
-#     if [ -f "$HOME/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-#         . "$HOME/opt/anaconda3/etc/profile.d/conda.sh"
-#     else
-#         export PATH="$HOME/opt/anaconda3/bin:$PATH"
-#     fi
-# fi
-# unset __conda_setup
+__conda_setup="$(''"$HOME"'/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "$HOME/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="$HOME/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
 # <<< conda initialize <<<
 
 # === nvm ===
