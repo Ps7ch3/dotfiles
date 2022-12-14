@@ -176,6 +176,7 @@ local mappings = {
         name = "Bufferline",
         p = { "<cmd>BufferLinePick<CR>", "Pick buffer"},
         c = { "<cmd>BufferLinePickClose<CR>", "Close buffer pick"},
+        i = { "<cmd>BufferLineTogglePin<CR>", "Pin buffer"},
     }
 }
 
