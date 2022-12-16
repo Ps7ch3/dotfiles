@@ -35,9 +35,8 @@ return packer.startup(function(use)
 
     -- docs
     use {
-        "danymat/neogen",
-        requires = "nvim-treesitter/nvim-treesitter",
-        tag = "*"
+        'kkoomen/vim-doge',
+        run = ':call doge#install()'
     }
 
     -- tools 
