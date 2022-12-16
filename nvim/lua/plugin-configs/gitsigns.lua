@@ -4,15 +4,51 @@ if not ok then
     return
 end
 
+local icons_status_ok, icons = pcall(require, "myicons")
+if not icons_status_ok then
+    return
+end
+
+
 gitsigns.setup {
-  signs = {
-    add          = { hl = 'GitSignsAdd'   , text = '+', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'    },
-    change       = { hl = 'GitSignsChange', text = '+', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn' },
-    delete       = { hl = 'GitSignsDelete', text = '_', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn' },
-    topdelete    = { hl = 'GitSignsDelete', text = '‾', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn' },
-    changedelete = { hl = 'GitSignsChange', text = '~', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn' },
-    untracked    = { hl = 'GitSignsAdd'   , text = '┆', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'    },
-  },
+    signs = {
+        add = {
+            hl = "GitSignsAdd",
+            text = icons.ui.BoldLineLeft,
+            numhl = "GitSignsAddNr",
+            linehl = "GitSignsAddLn",
+        },
+        change = {
+            hl = "GitSignsChange",
+            text = icons.ui.BoldLineLeft,
+            numhl = "GitSignsChangeNr",
+            linehl = "GitSignsChangeLn",
+        },
+        delete = {
+            hl = "GitSignsDelete",
+            text = icons.ui.Triangle,
+            numhl = "GitSignsDeleteNr",
+            linehl = "GitSignsDeleteLn",
+        },
+        topdelete = {
+            hl = "GitSignsDelete",
+            text = icons.ui.Triangle,
+            numhl = "GitSignsDeleteNr",
+            linehl = "GitSignsDeleteLn",
+        },
+        changedelete = {
+            hl = "GitSignsChange",
+            text = icons.ui.BoldLineLeft,
+            numhl = "GitSignsChangeNr",
+            linehl = "GitSignsChangeLn",
+        },
+        untracked = {
+            hl = 'GitSignsAdd',
+            text = icons.git.FileUntracked,
+            numhl='GitSignsAddNr',
+            linehl='GitSignsAddLn'
+        },
+    },
   signcolumn = true,  -- Toggle with `:Gitsigns toggle_signs`
   numhl      = false, -- Toggle with `:Gitsigns toggle_numhl`
   linehl     = false, -- Toggle with `:Gitsigns toggle_linehl`
