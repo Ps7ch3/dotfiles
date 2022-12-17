@@ -14,7 +14,6 @@ km('n', '<C-k>', '<C-w>k', opts)
 km('n', '<C-h>', '<C-w>h', opts)
 km('n', '<C-l>', '<C-w>l', opts)
 
-
 -- buffer
 km('n', '<leader>bd', ':bd<CR>', opts)
 
@@ -34,11 +33,11 @@ km("n", "<leader>t", ":NvimTreeToggle<CR>", opts)
 km("n", "<leader>gst", ":Telescope git_status<CR>", opts)
 km("n", "<leader>gss", ":Telescope git_stash<CR>", opts)
 
--- neogen
-km("n", "<leader>doc", ":Neogen<CR>", opts)
-
 km("v", "<", "<gv", opts)
 km("v", ">", ">gv", opts)
+
+-- register paste
+km('v', '<leader>p', '"_dP', opts)
 
 km("i", "<C-b>", "<Left>", opts)
 km("i", "<C-f>", "<Right>", opts)
