@@ -10,19 +10,21 @@ local undodir = vim.fn.stdpath('data') .. '/undodir'
 vim.fn.mkdir(undodir, 'p')
 vim.o.undodir = undodir
 
--- cmd
-vim.cmd "syntax on"
-vim.cmd "set number"
-vim.cmd "set undofile"
-
 
 local options = {
+    -- tab
     tabstop = 4,
     shiftwidth = 4,
     smartindent = true,
     expandtab = true,
-    encoding = "utf-8",
-    termguicolors = true,
+
+    encoding = "utf-8",  -- encoding
+    termguicolors = true,  -- color
+    undofile = true, -- enable undofile
+
+    -- show relative line number and current line number
+    relativenumber = true,
+    nu = true,
 }
 
 for k, v in pairs(options) do
