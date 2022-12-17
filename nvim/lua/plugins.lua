@@ -125,10 +125,6 @@ return packer.startup(function(use)
     }
 
     -- color
-    -- use {
-    --     "ellisonleao/gruvbox.nvim",
-    --     requires = {"rktjmp/lush.nvim"}
-    -- }
     use {'folke/tokyonight.nvim'}
 
     -- other
