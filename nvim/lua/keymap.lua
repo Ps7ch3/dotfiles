@@ -8,6 +8,14 @@ local opts = {
     silent = true
 }
 
+-- Modes
+--   normal_mode = "n",
+--   insert_mode = "i",
+--   visual_mode = "v",
+--   visual_block_mode = "x",
+--   term_mode = "t",
+--   command_mode = "c",
+
 -- move among windows
 km('n', '<C-j>', '<C-w>j', opts)
 km('n', '<C-k>', '<C-w>k', opts)
