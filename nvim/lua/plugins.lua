@@ -134,5 +134,9 @@ return packer.startup(function(use)
     -- other
     use {'lewis6991/impatient.nvim'} -- profiler
     use {'epwalsh/obsidian.nvim'} -- obsidian
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
 
 end)
