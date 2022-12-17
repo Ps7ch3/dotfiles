@@ -43,3 +43,6 @@ require('plugins')
 
 -- lsp
 require('lsp')
+
+-- other
+require('plugin-configs.obsidian')

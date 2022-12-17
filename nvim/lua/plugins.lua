@@ -133,5 +133,6 @@ return packer.startup(function(use)
 
     -- other
     use {'lewis6991/impatient.nvim'} -- profiler
+    use {'epwalsh/obsidian.nvim'} -- obsidian
 
 end)
