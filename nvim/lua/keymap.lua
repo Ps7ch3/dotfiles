@@ -17,6 +17,10 @@ km('n', '<C-l>', '<C-w>l', opts)
 -- buffer
 km('n', '<leader>bd', ':bd<CR>', opts)
 
+-- page move
+km("n", "<C-d>", "<C-d>zz", opts)
+km("n", "<C-u>", "<C-u>zz", opts)
+
 -- Navigate buffers
 km("n", "<S-l>", ":bnext<CR>", opts)
 km("n", "<S-h>", ":bprevious<CR>", opts)
