@@ -36,7 +36,8 @@ return packer.startup(function(use)
     -- docs
     use {
         'kkoomen/vim-doge',
-        run = ':call doge#install()'
+        run = ':call doge#install()',
+        opt = true,
     }
 
     -- tools 
@@ -121,7 +122,7 @@ return packer.startup(function(use)
 
     use {
         'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+        requires = { 'kyazdani42/nvim-web-devicons'},
     }
 
     -- color
@@ -129,10 +130,11 @@ return packer.startup(function(use)
 
     -- other
     use {'lewis6991/impatient.nvim'} -- profiler
-    use {'epwalsh/obsidian.nvim'} -- obsidian
+    use {'epwalsh/obsidian.nvim', opt = true} -- obsidian
     use({
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
+        opt = true,
     })
 
 end)
