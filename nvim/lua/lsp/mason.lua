@@ -3,6 +3,7 @@ local servers = {
     "pyright",
     "tsserver",
     "rust_analyzer",
+    "gopls",
 }
 
 local status_mason_ok, mason = pcall(require, "mason")
