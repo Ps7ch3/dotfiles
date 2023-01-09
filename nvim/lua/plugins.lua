@@ -41,6 +41,7 @@ return packer.startup(function(use)
     }
 
     -- tools 
+    use { "ThePrimeagen/harpoon", requires = 'nvim-lua/plenary.nvim' }
     use { "ahmedkhalf/project.nvim" }
     use {
         'nvim-tree/nvim-tree.lua',
