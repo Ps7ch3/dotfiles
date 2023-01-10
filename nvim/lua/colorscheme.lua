@@ -35,6 +35,7 @@ require("tokyonight").setup({
   ---@param colors ColorScheme
   on_highlights = function(highlights, colors)
         highlights.LineNr = { fg = colors.orange, bold = true }
+        highlights.CursorLineNr = { fg = colors.green, bold = true }
     end,
 })
 

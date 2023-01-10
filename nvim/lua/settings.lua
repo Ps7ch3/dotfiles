@@ -25,6 +25,10 @@ local options = {
     -- show relative line number and current line number
     relativenumber = true,
     nu = true,
+
+    -- cursor line (https://github.com/folke/tokyonight.nvim/issues/225)
+    cursorline = true,
+    cursorlineopt = "number",
 }
 
 for k, v in pairs(options) do
