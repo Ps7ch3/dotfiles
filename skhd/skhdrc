@@ -14,6 +14,9 @@ alt - z : yabai -m window --focus stack.prev
 alt - c : yabai -m window --focus stack.next
 alt - x : yabai -m window --focus recent
 
+# rotate tree
+alt - r : yabai -m space --rotate 90
+
 # swap window
 shift + alt - h : yabai -m window --swap west
 shift + alt - j : yabai -m window --swap south
