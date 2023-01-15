@@ -16,6 +16,8 @@ export TERM=xterm-256color
 
 export PATH=/opt/homebrew/bin:$PATH
 
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
