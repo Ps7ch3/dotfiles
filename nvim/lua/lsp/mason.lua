@@ -4,6 +4,7 @@ local servers = {
     "tsserver",
     "rust_analyzer",
     "gopls",
+    "yamlls",
 }
 
 local status_mason_ok, mason = pcall(require, "mason")
