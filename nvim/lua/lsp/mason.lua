@@ -5,6 +5,7 @@ local servers = {
     "rust_analyzer",
     "gopls",
     "yamlls",
+    "jsonls",
 }
 
 local status_mason_ok, mason = pcall(require, "mason")
