@@ -15,6 +15,7 @@ require('plugin-configs.nvim-tree')
 require('plugin-configs.whichkey')
 require('plugin-configs.harpoon')
 require('plugin-configs.osc52')
+require('plugin-configs.refactoring')
 
 -- prettify
 require('plugin-configs.alpha')

@@ -41,6 +41,13 @@ return packer.startup(function(use)
     }
 
     -- tools 
+    use {
+        "ThePrimeagen/refactoring.nvim",
+        requires = {
+            {"nvim-lua/plenary.nvim"},
+            {"nvim-treesitter/nvim-treesitter"}
+        }
+    }
     use { 'ojroques/nvim-osc52' }
     use { "ThePrimeagen/harpoon", requires = 'nvim-lua/plenary.nvim' }
     use { "ahmedkhalf/project.nvim" }
