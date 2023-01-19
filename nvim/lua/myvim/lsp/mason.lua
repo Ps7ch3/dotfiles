@@ -33,11 +33,11 @@ end
 
 for _, server in ipairs(servers) do
     local opts = {
-        on_attach = require("lsp.handlers").on_attach,
-        capabilities = require("lsp.handlers").capabilities,
+        on_attach = require("myvim.lsp.handlers").on_attach,
+        capabilities = require("myvim.lsp.handlers").capabilities,
     }
 
-    local need_extra_config, server_custom_opts = pcall(require, "lsp.settings." .. server)
+    local need_extra_config, server_custom_opts = pcall(require, "myvim.lsp.settings." .. server)
     if need_extra_config then
         opts = vim.tbl_deep_extend("force", opts, server_custom_opts)
     end

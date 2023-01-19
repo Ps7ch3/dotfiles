@@ -1,51 +1,51 @@
 -- load core settings
-require('settings')
-require('keymap')
-require('colorscheme')
+require('myvim.settings')
+require('myvim.keymap')
+require('myvim.colorscheme')
 
 -- load plugins
-require('plugin-configs.impatient')
-require('plugin-configs.bufferline')
-require('plugin-configs.nvim-treesitter')
+require('myvim.plugin-configs.impatient')
+require('myvim.plugin-configs.bufferline')
+require('myvim.plugin-configs.nvim-treesitter')
 
 -- useful tools
-require('plugin-configs.toggleterm')
-require('plugin-configs.telescope')
-require('plugin-configs.nvim-tree')
-require('plugin-configs.whichkey')
-require('plugin-configs.harpoon')
-require('plugin-configs.osc52')
-require('plugin-configs.refactoring')
+require('myvim.plugin-configs.toggleterm')
+require('myvim.plugin-configs.telescope')
+require('myvim.plugin-configs.nvim-tree')
+require('myvim.plugin-configs.whichkey')
+require('myvim.plugin-configs.harpoon')
+require('myvim.plugin-configs.osc52')
+require('myvim.plugin-configs.refactoring')
 
 -- prettify
-require('plugin-configs.alpha')
-require('plugin-configs.project')
-require('plugin-configs.lualine')
-require('plugin-configs.indentline')
+require('myvim.plugin-configs.alpha')
+require('myvim.plugin-configs.project')
+require('myvim.plugin-configs.lualine')
+require('myvim.plugin-configs.indentline')
 
 -- code
-require('plugin-configs.Comment')
-require('plugin-configs.trouble')
-require('plugin-configs.neogen')
-require('plugin-configs.nvim-autopairs')
-require('plugin-configs.surround')
-require('plugin-configs.todo-comments')
+require('myvim.plugin-configs.Comment')
+require('myvim.plugin-configs.trouble')
+require('myvim.plugin-configs.neogen')
+require('myvim.plugin-configs.nvim-autopairs')
+require('myvim.plugin-configs.surround')
+require('myvim.plugin-configs.todo-comments')
 
 -- git
-require('plugin-configs.gitsigns')
+require('myvim.plugin-configs.gitsigns')
 
 -- debug
-require('dap.dap')
+require('myvim.dap.dap')
 
 -- cmp & snippet
-require('plugin-configs.luasnip')
-require('nvim-cmp')
+require('myvim.plugin-configs.luasnip')
+require('myvim.nvim-cmp')
 
 -- load plugins
-require('plugins')
+require('myvim.plugins')
 
 -- lsp
-require('lsp')
+require('myvim.lsp')
 
 -- other
-require('plugin-configs.obsidian')
+require('myvim.plugin-configs.obsidian')
