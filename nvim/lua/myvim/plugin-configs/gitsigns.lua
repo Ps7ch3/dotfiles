@@ -4,7 +4,7 @@ if not ok then
     return
 end
 
-local icons_status_ok, icons = pcall(require, "myicons")
+local icons_status_ok, icons = pcall(require, "myvim.myicons")
 if not icons_status_ok then
     return
 end
