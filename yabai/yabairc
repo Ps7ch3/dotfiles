@@ -2,7 +2,7 @@
 yabai -m config                              \
     external_bar                off:41:0     \
     mouse_follows_focus         on          \
-    focus_follows_mouse         autoraise    \
+    focus_follows_mouse         off    \
     window_placement            second_child \
     window_topmost              off          \
     window_shadow               off          \
