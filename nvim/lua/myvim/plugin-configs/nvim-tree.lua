@@ -1,6 +1,5 @@
 local status, nvim_tree = pcall(require, "nvim-tree")
 if not status then
-  vim.notify("Not found nvim-tree")
   return
 end
 
@@ -9,7 +8,7 @@ if not config_status_ok then
   return
 end
 
-local myicons_status_ok, myicons = pcall(require, "myicons")
+local myicons_status_ok, myicons = pcall(require, "myvim.myicons")
 if not myicons_status_ok then
     return
 end
