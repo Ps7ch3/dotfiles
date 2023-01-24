@@ -1,6 +1,11 @@
 local cs = "tokyonight"
 
-require("tokyonight").setup({
+local tokyonight_status_ok, tokyonight = pcall(require, "tokyonight")
+if not tokyonight_status_ok then
+    return
+end
+
+tokyonight.setup({
   -- your configuration comes here
   -- or leave it empty to use the default settings
   style = "moon", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
