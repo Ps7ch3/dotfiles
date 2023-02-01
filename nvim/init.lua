@@ -1,10 +1,12 @@
--- load core settings
+-- lazy
+require('myvim.plugins')
+
+-- basic
 require('myvim.settings')
 require('myvim.keymap')
 require('myvim.colorscheme')
 
 -- load plugins
-require('myvim.plugin-configs.impatient')
 require('myvim.plugin-configs.bufferline')
 require('myvim.plugin-configs.nvim-treesitter')
 
@@ -41,11 +43,5 @@ require('myvim.dap.dap')
 require('myvim.plugin-configs.luasnip')
 require('myvim.nvim-cmp')
 
--- load plugins
-require('myvim.plugins')
-
 -- lsp
 require('myvim.lsp')
-
--- other
-require('myvim.plugin-configs.obsidian')
