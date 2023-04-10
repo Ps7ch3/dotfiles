@@ -178,6 +178,12 @@ local mappings = {
         p = { "<cmd>BufferLinePick<CR>", "Pick buffer"},
         c = { "<cmd>BufferLinePickClose<CR>", "Close buffer pick"},
         i = { "<cmd>BufferLineTogglePin<CR>", "Pin buffer"},
+    },
+    r = {
+        name = "Refactor",
+        e = {"<Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>", "Extract Function"},
+        f = {"<Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>", "Extract Function to File"},
+        v = {"<Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<CR>", "Extract Variable"},
     }
 }
 
