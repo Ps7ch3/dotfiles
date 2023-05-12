@@ -1,9 +1,6 @@
 local servers = {
-    "sumneko_lua",
+    "lua_ls",
     "pyright",
-    "tsserver",
-    "rust_analyzer",
-    "gopls",
     "yamlls",
     "jsonls",
 }
