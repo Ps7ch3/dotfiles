@@ -88,3 +88,5 @@ export NVM_DIR="$HOME/.nvm"
 # === Others ===
 export PATH="$PATH:$HOME/.ft"
 
+alias xcopy='xclip -selection clipboard'
+alias xpaste='xclip -selection clipboard -o'
