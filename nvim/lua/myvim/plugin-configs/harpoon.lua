@@ -9,7 +9,7 @@ if not ui_status_ok then
 end
 
 vim.keymap.set("n", "<leader>af", mark.add_file)
-vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu)
+vim.keymap.set("n", "<C-s>", ui.toggle_quick_menu)
 
 vim.keymap.set("n", "<leader>q", function() ui.nav_file(1) end)
 vim.keymap.set("n", "<leader>w", function() ui.nav_file(2) end)
