@@ -69,7 +69,6 @@ return lazy.setup({
     {"nvim-telescope/telescope.nvim", dependencies = { {'nvim-lua/plenary.nvim'} }},
     "akinsho/toggleterm.nvim",
     {"folke/which-key.nvim"},
-    {"gpanders/editorconfig.nvim"},
 
     -- code
     -- ** highlight
