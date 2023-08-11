@@ -1,13 +1,13 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -46,29 +46,53 @@ return lazy.setup({
         dependencies = "nvim-treesitter/nvim-treesitter",
     },
 
-    -- tools 
-    {
-        "ThePrimeagen/refactoring.nvim",
-        dependencies = {
-            {"nvim-lua/plenary.nvim"},
-            {"nvim-treesitter/nvim-treesitter"}
-        }
-    },
-    { 'ojroques/nvim-osc52' },
-    { "ThePrimeagen/harpoon", dependencies = 'nvim-lua/plenary.nvim' },
-    { "ahmedkhalf/project.nvim" },
+    -- tools
     {
         'nvim-tree/nvim-tree.lua',
         dependencies = {
             'nvim-tree/nvim-web-devicons', -- optional, for file icons
         }
     },
-    "kylechui/nvim-surround",
-
-    {"akinsho/bufferline.nvim", dependencies = 'nvim-tree/nvim-web-devicons'},
-    {"nvim-telescope/telescope.nvim", dependencies = { {'nvim-lua/plenary.nvim'} }},
+    { "nvim-telescope/telescope.nvim", dependencies = { { 'nvim-lua/plenary.nvim' } } },
     "akinsho/toggleterm.nvim",
-    {"folke/which-key.nvim"},
+    { "folke/which-key.nvim" },
+
+    -- useful feature
+    { 'ojroques/nvim-osc52' },
+    { "ThePrimeagen/harpoon", dependencies = 'nvim-lua/plenary.nvim' },
+    { "ahmedkhalf/project.nvim" },
+    "kylechui/nvim-surround",
+    { "akinsho/bufferline.nvim", dependencies = 'nvim-tree/nvim-web-devicons' },
+
+    {
+        "nvim-telescope/telescope.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "debugloop/telescope-undo.nvim",
+        },
+        config = function()
+            require("telescope").setup({
+                extensions = {
+                    undo = {
+                        side_by_side = true,
+                        layout_strategy = "vertical",
+                        layout_config = {
+                            preview_height = 0.8,
+                        },
+                        mappings = {
+                            i = {
+                                ["<s-cr>"] = require("telescope-undo.actions").yank_additions,
+                                ["<c-cr>"] = require("telescope-undo.actions").yank_deletions,
+                                ["<cr>"] = require("telescope-undo.actions").restore
+                            },
+                        },
+                    },
+                },
+            })
+            require("telescope").load_extension("undo")
+            vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>")
+        end,
+    },
 
     -- code
     -- ** highlight
@@ -76,9 +100,9 @@ return lazy.setup({
         "folke/todo-comments.nvim",
         dependencies = "nvim-lua/plenary.nvim",
     },
-    {'RRethy/vim-illuminate'},
+    { 'RRethy/vim-illuminate' },
 
-    {'windwp/nvim-autopairs'},
+    { 'windwp/nvim-autopairs' },
     { 'numToStr/Comment.nvim' },
     { 'lewis6991/gitsigns.nvim' },
     { "lukas-reineke/indent-blankline.nvim" },
@@ -87,13 +111,23 @@ return lazy.setup({
         dependencies = "nvim-tree/nvim-web-devicons",
     },
 
+    -- ** refactor
+
+    {
+        "ThePrimeagen/refactoring.nvim",
+        dependencies = {
+            { "nvim-lua/plenary.nvim" },
+            { "nvim-treesitter/nvim-treesitter" }
+        }
+    },
+
     -- lsp related --
     {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig"
     },
-    {"jose-elias-alvarez/null-ls.nvim"},
+    { "jose-elias-alvarez/null-ls.nvim" },
 
     -- debug
     {
@@ -123,7 +157,7 @@ return lazy.setup({
 
     {
         'nvim-lualine/lualine.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons'},
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
     },
 
     -- color
