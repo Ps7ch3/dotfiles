@@ -56,6 +56,16 @@ return lazy.setup({
     { "nvim-telescope/telescope.nvim", dependencies = { { 'nvim-lua/plenary.nvim' } } },
     "akinsho/toggleterm.nvim",
     { "folke/which-key.nvim" },
+    {
+        "folke/flash.nvim",
+        event = "VeryLazy",
+        opts = {},
+        keys = {
+            { "s", mode = { "n", "o", "x" }, function() require("flash").jump() end, desc = "Flash" },
+            { "S", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+        },
+    },
+
 
     -- useful feature
     { 'ojroques/nvim-osc52' },
