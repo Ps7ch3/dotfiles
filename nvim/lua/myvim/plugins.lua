@@ -115,7 +115,7 @@ return lazy.setup({
     { 'windwp/nvim-autopairs' },
     { 'numToStr/Comment.nvim' },
     { 'lewis6991/gitsigns.nvim' },
-    { "lukas-reineke/indent-blankline.nvim" },
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts={}, },
     {
         "folke/trouble.nvim",
         dependencies = "nvim-tree/nvim-web-devicons",
