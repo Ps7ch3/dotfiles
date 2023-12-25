@@ -35,6 +35,7 @@ yabai -m config                              \
 
 echo "yabai configuration loaded.."
 
+yabai -m rule --add app="^Preview$" manage=off
 yabai -m rule --add app="^Finder$" manage=off
 
 yabai -m rule --add app="^WeChat$" manage=off
