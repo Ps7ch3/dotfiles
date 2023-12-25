@@ -39,4 +39,5 @@ yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^WeChat$" manage=off
 yabai -m rule --add app="^Telegram$" manage=off
 yabai -m rule --add app="^QQ$" manage=off
+yabai -m rule --add app="^WeCom$" manage=off
 
