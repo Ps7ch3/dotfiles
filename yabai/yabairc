@@ -48,3 +48,5 @@ yabai -m rule --add app="^Clash Verge$" manage=off
 yabai -m rule --add app="^Alfred Preferences$" manage=off
 
 yabai -m rule --add app="^Telegram$" manage=off
+
+yabai -m rule --add app="^Music$" manage=off
