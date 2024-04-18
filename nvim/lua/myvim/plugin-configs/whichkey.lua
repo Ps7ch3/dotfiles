@@ -87,7 +87,6 @@ local opts = {
 }
 
 local mappings = {
-    ["a"] = { "<cmd>Alpha<CR>", "Alpha" },
     ["w"] = { "<cmd>w!<CR>", "Save" },
     ["q"] = { "<cmd>q!<CR>", "Quit" },
     ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
