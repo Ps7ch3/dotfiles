@@ -18,6 +18,7 @@ require('myvim.plugin-configs.whichkey')
 require('myvim.plugin-configs.harpoon')
 require('myvim.plugin-configs.osc52')
 require('myvim.plugin-configs.refactoring')
+require('myvim.plugin-configs.mini')
 
 -- prettify
 require('myvim.plugin-configs.alpha')

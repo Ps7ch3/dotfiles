@@ -48,6 +48,10 @@ return lazy.setup({
 
     -- tools
     {
+        'echasnovski/mini.nvim',
+        version = '*',
+    },
+    {
         'nvim-tree/nvim-tree.lua',
         dependencies = {
             'nvim-tree/nvim-web-devicons', -- optional, for file icons
@@ -61,7 +65,7 @@ return lazy.setup({
         event = "VeryLazy",
         opts = {},
         keys = {
-            { "s", mode = { "n", "o", "x" }, function() require("flash").jump() end, desc = "Flash" },
+            { "s", mode = { "n", "o", "x" }, function() require("flash").jump() end,       desc = "Flash" },
             { "S", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
         },
     },
@@ -115,7 +119,7 @@ return lazy.setup({
     { 'windwp/nvim-autopairs' },
     { 'numToStr/Comment.nvim' },
     { 'lewis6991/gitsigns.nvim' },
-    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts={}, },
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {}, },
     {
         "folke/trouble.nvim",
         dependencies = "nvim-tree/nvim-web-devicons",
