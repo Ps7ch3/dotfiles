@@ -90,9 +90,14 @@ outer.right =      0
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-slash = 'layout tiles horizontal vertical'
-alt-comma = 'layout accordion horizontal vertical'
+alt-comma = 'layout floating tiling'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
+cmd-ctrl-h = 'focus-monitor left'
+cmd-ctrl-j = 'focus-monitor down'
+cmd-ctrl-k = 'focus-monitor up'
+cmd-ctrl-l = 'focus-monitor right'
+
 alt-h = 'focus left'
 alt-j = 'focus down'
 alt-k = 'focus up'
@@ -109,6 +114,7 @@ alt-shift-minus = 'resize smart -50'
 alt-shift-equal = 'resize smart +50'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
+ctrl-0 = 'workspace 0'
 ctrl-1 = 'workspace 1'
 ctrl-2 = 'workspace 2'
 ctrl-3 = 'workspace 3'
@@ -120,6 +126,7 @@ ctrl-8 = 'workspace 8'
 ctrl-9 = 'workspace 9'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
+alt-shift-0 = 'move-node-to-workspace 0'
 alt-shift-1 = 'move-node-to-workspace 1'
 alt-shift-2 = 'move-node-to-workspace 2'
 alt-shift-3 = 'move-node-to-workspace 3'
@@ -151,3 +158,23 @@ alt-shift-h = ['join-with left', 'mode main']
 alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
+
+
+[workspace-to-monitor-force-assignment]
+0 = '^built-in retina display$'  # Case insensitive regex match
+1 = '^built-in retina display$'  # Case insensitive regex match
+2 = 'main'
+3 = 'main'
+4 = 'main'
+5 = 'main'
+
+
+[[on-window-detected]]
+if.app-id = 'com.tencent.qq'
+check-further-callbacks = true
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.tencent.WeWorkMac'
+check-further-callbacks = true
+run = 'layout floating'
