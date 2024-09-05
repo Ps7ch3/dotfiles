@@ -23,7 +23,7 @@ local mappings = {
     -- groups
     f = {
         name = "File Related",
-        f = { "<cmd>lua MiniFiles.open()<cr>", "Toggle mini.files" }
+        f = { "<cmd>lua MiniFiles.open(vim.api.nvim_buf_get_name(0), false)<cr>", "Toggle mini.files" }
     },
     p = {
         name = "Packer",
