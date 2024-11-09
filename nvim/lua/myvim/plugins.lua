@@ -59,13 +59,13 @@ return lazy.setup({
     },
     { "nvim-telescope/telescope.nvim", dependencies = { { 'nvim-lua/plenary.nvim' } } },
     "akinsho/toggleterm.nvim",
-    { "folke/which-key.nvim" , version = "v2.1.0"},
+    { "folke/which-key.nvim", version = "v2.1.0" },
     {
         "folke/flash.nvim",
         event = "VeryLazy",
         opts = {},
         keys = {
-            { "s", mode = { "n", "o", "x" }, function() require("flash").jump() end,       desc = "Flash" },
+            { "s", mode = { "n", "o", "x" }, function() require("flash").jump() end, desc = "Flash" },
             { "S", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
         },
     },
@@ -73,7 +73,7 @@ return lazy.setup({
 
     -- useful feature
     { 'ojroques/nvim-osc52' },
-    { "ThePrimeagen/harpoon", dependencies = 'nvim-lua/plenary.nvim' },
+    { "ThePrimeagen/harpoon", branch = "harpoon2", dependencies = 'nvim-lua/plenary.nvim' },
     { "ahmedkhalf/project.nvim" },
     "kylechui/nvim-surround",
     { "akinsho/bufferline.nvim", dependencies = 'nvim-tree/nvim-web-devicons' },
